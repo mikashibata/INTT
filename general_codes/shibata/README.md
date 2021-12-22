@@ -1,5 +1,7 @@
 # readtree
 
+2021/12/22 Mika Shibata Nara Women's University
+
 This macro is for the INTT beam test and MC analysis. This analysis uses the first INTT event per one CAMAC trigger signal. (There are multiple INTT events with different bcofull in a CAMAC trigger signal.)
 You can analysis two things for three ladders.
 - INTT hits per bcofull and bco (= one INTT event) (` t.next(); `)
