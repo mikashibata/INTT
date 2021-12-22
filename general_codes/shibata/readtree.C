@@ -1,4 +1,9 @@
 // ************** README ************************************
+
+
+// 2021/12/22 Mika Shibata Nara Women's University
+
+
 // This macro is for the first INTT hit with a CAMAC trigger signal.
 // (There are multiple INTT hits with different bcofull in a CAMAC trigger signal)
 // In this macro, you can change same variables and situations.
