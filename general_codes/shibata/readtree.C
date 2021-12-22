@@ -1,9 +1,7 @@
-// ************** README ************************************
-
 
 // 2021/12/22 Mika Shibata Nara Women's University
 
-
+// ************** README ************************************
 // This macro is for the first INTT hit with a CAMAC trigger signal.
 // (There are multiple INTT hits with different bcofull in a CAMAC trigger signal)
 // In this macro, you can change same variables and situations.
@@ -238,7 +236,7 @@ void readtree::process_hits(
           NHITCHIP++;
         }
         
-	for(int I=0;I<Nhits;I++)
+        for(int I=0;I<Nhits;I++)
         {
           adc_Ret[ncls][I]  =  hitAdc[ichip][start+I];
         }
@@ -449,7 +447,7 @@ void readtree::Loop(Long64_t entry)
         double expect_ChanAxis[3];
         
         // You can change the offset value form the mean of fittion function (gaus) for regidual distribution. 
-	double residual_chan_13[3] = {7.5652730,-3.6684312,7.3548750}; 
+        double residual_chan_13[3] = {7.5652730,-3.6684312,7.3548750}; 
 
 
         if(m_boolMC)
@@ -484,7 +482,7 @@ void readtree::Loop(Long64_t entry)
 
         
         // Select chip_id to calculate the efficiency
-				// For the efficiency of limited chips
+        // For the efficiency of limited chips
         // *****************************
         int CHOOSE_CHIP1 = 7;
         if(m_boolMC)CHOOSE_CHIP1 = 6;
@@ -560,7 +558,7 @@ void readtree::Loop(Long64_t entry)
 
                 // ********* decide width for strips from residual distridution ********************
                 // You can change the offset value form the sigma of fittion function (gaus) for regidual distribution. ex)sigma*N
-								double cutwindow;
+                double cutwindow;
                 //if(m_boolMC)  cutwindow = 7.70906e+00*3.; // choose event of 1 cluster hit in 2 ladders
                 if(m_boolMC)  cutwindow = 1.13262e+00*3.;   // choose event of 1 cluster hit in all ladders
                 //if(!m_boolMC) cutwindow = 5.;
@@ -722,7 +720,7 @@ void readtree::Loop(Long64_t entry)
                 cout<<"          expect chip:"<<expect_ChipAxis[0]<<" chan:"<<expect_ChanAxis[0]<<endl;
                 
 
-								// ********* decide width for strips from residual distridution ********************
+                // ********* decide width for strips from residual distridution ********************
                 // You can change the offset value form the sigma of fittion function (gaus) for regidual distribution. ex)sigma*N
                 double cutwindow; 
                 if(m_boolMC)  cutwindow = 1.14710e+00*3.; // choose event of 1 cluster hit in all ladder
@@ -783,7 +781,7 @@ void readtree::Loop(Long64_t entry)
       
       // ******** Cut situation **********    
       // If you want to cut noisy channel and chip, add `if( -condition you wan to cut- )continue;
-			/*
+      /*
       if(module->at(ins)==6&&chan_id->at(ins)==1&&chip_id->at(ins)==14)continue;
       if(module->at(ins)==6&&chan_id->at(ins)==1&&chip_id->at(ins)==16)continue;
       if(module->at(ins)==5&&chan_id->at(ins)==255-136&&chip_id->at(ins)==19)continue;
@@ -1047,5 +1045,3 @@ void readtree::next()
   //c2->Write();
 
 }
-
-  
